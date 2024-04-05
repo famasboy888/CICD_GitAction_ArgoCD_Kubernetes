@@ -17,5 +17,8 @@ jobs:
       - name: Build and push Docker image for Backend
         working-directory: ./backend
         run: |
-          echo ${{ secrets.TEST_SECRET }} > sample.txt
-          cat sample.txt
+          sed -i '/PORT=/c\PORT=${{ secrets.MONGO_PORT }}' .env
+          sed -i '/MONGO_USER=/c\MONGO_USER=${{ secrets.MONGO_USER }}' .env
+          sed -i '/MONGO_PASS=/c\MONGO_PASS=${{ secrets.MONGO_PASS }}' .env
+          sed -i '/MONGO_API=/c\MONGO_API=${{ secrets.MONGO_API }}' .env
+          cat .env
