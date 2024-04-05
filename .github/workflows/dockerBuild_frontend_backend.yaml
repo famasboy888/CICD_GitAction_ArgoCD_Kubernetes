@@ -13,3 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Build and push Docker image for Backend
+        working-directory: ./backend
+        run: |
+          cat Dockerfile
