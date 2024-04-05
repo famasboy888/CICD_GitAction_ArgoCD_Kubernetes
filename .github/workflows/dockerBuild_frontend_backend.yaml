@@ -17,4 +17,5 @@ jobs:
       - name: Build and push Docker image for Backend
         working-directory: ./backend
         run: |
-          echo ${{ secrets.TEST_SECRET }}
+          echo ${{ secrets.TEST_SECRET }} > sample.txt
+          cat sample.txt
