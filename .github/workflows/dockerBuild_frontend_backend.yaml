@@ -13,7 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - name: Create file
         working-directory: ./backend
         run: |
@@ -22,14 +21,14 @@ jobs:
           sed -i '/MONGO_PASS=/c\MONGO_PASS=${{ secrets.MONGO_PASS }}' .env
           sed -i '/MONGO_API=/c\MONGO_API=${{ secrets.MONGO_API }}' .env
       
-      - name: Login Docker
       - uses: docker/login-action@v3
+      - name: Login Docker
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build and push Docker image for Backend
+      
       - uses: docker/build-push-action@v5
+      - name: Build and push Docker image for Backend
         with:
           context: ./backend
           push: true
