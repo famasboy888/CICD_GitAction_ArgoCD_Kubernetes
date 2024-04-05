@@ -52,11 +52,10 @@ jobs:
       - name: Push to ArgoCD repo
         run: |
           cd MERN_helm-chart
-          ls *
-          # sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
-          # git config user.name famasboy888
-          # git config user.email famasboy88@gmail.com
-          # git add .
-          # git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
-          # git push
+          sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
+          git config user.name famasboy888
+          git config user.email famasboy88@gmail.com
+          git add .
+          git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
+          git push
 
