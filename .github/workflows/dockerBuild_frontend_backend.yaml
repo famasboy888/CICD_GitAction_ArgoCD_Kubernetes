@@ -12,25 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-    - name: Create file after checkout
-      uses: actions/checkout@v4
-      working-directory: ./backend
-        run: |
-          sed -i '/PORT=/c\PORT=${{ secrets.MONGO_PORT }}' .env
-          sed -i '/MONGO_USER=/c\MONGO_USER=${{ secrets.MONGO_USER }}' .env
-          sed -i '/MONGO_PASS=/c\MONGO_PASS=${{ secrets.MONGO_PASS }}' .env
-          sed -i '/MONGO_API=/c\MONGO_API=${{ secrets.MONGO_API }}' .env
+      - uses: actions/checkout@v4 
+      - name: Create file after checkout
+        working-directory: ./backend
+          run: |
+            sed -i '/PORT=/c\PORT=${{ secrets.MONGO_PORT }}' .env
+            sed -i '/MONGO_USER=/c\MONGO_USER=${{ secrets.MONGO_USER }}' .env
+            sed -i '/MONGO_PASS=/c\MONGO_PASS=${{ secrets.MONGO_PASS }}' .env
+            sed -i '/MONGO_API=/c\MONGO_API=${{ secrets.MONGO_API }}' .env
     
-    - name: Login Docker
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login Docker
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    - name: Build and push Docker image for Backend
-      uses: docker/build-push-action@v5
-      with:
-        context: ./backend
-        push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME  }}/node-server:0.0.${{ github.run_number }}.RELEASE
+    # - name: Build and push Docker image for Backend
+    #   uses: docker/build-push-action@v5
+    #   with:
+    #     context: ./backend
+    #     push: true
+    #     tags: ${{ secrets.DOCKERHUB_USERNAME  }}/node-server:0.0.${{ github.run_number }}.RELEASE
