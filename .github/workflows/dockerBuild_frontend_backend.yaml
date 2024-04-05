@@ -53,8 +53,8 @@ jobs:
       - name: check files
         shell: bash
         working-directory: MERN_helm-chart   
-          run: |
-            ls *
-            cat values.yaml
+        run: |
+          ls *
+          cat values.yaml
 
 
