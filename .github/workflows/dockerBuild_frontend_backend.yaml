@@ -48,11 +48,13 @@ jobs:
         with:
           repository: famasboy888/CICD_ArgoCD_States
           path: MERN_helm-chart
-          run: |
-            sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
-            git config user.name famasboy888
-            git config user.email famasboy88@gmail.com
-            git add .
-            git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
-            git push
+      
+      - name: Push to ArgoCD repo
+        run: |
+          sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
+          git config user.name famasboy888
+          git config user.email famasboy88@gmail.com
+          git add .
+          git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
+          git push
 
