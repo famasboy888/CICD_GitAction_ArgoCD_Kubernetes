@@ -52,7 +52,7 @@ jobs:
       - name: Push to ArgoCD repo
         run: |
           cd MERN_helm-chart
-          sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
+          sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' ./values.yaml
           git config user.name famasboy888
           git config user.email famasboy88@gmail.com
           git add .
