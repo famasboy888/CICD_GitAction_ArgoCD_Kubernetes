@@ -50,7 +50,7 @@ jobs:
           path: CICD_ArgoCD_States
 
       - name: Create file after checkout
-        working-directory: ./MERN_helm-chart
+        working-directory: MERN_helm-chart
         run: |
           sed -i 's/versionNumber: .*/versionNumber: ${{ github.run_number }}/' values.yaml
           git config user.name famasboy888
