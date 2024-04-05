@@ -27,9 +27,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    # - name: Build and push Docker image for Backend
-    #   uses: docker/build-push-action@v5
-    #   with:
-    #     context: ./backend
-    #     push: true
-    #     tags: ${{ secrets.DOCKERHUB_USERNAME  }}/node-server:0.0.${{ github.run_number }}.RELEASE
+      - uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME  }}/node-server:0.0.${{ github.run_number }}.RELEASE
