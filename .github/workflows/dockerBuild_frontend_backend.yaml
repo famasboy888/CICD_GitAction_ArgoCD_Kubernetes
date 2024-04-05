@@ -47,12 +47,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: famasboy888/CICD_ArgoCD_States
+          path: MERN_helm-chart
           run: |
             ls *
-            # echo 'versionNumber: ${{ github.run_number }}' > values.yaml
-            # git config user.name famasboy888
-            # git config user.email famasboy88@gmail.com
-            # git add .
-            # git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
-            # git push
+            echo 'versionNumber: ${{ github.run_number }}' > values.yaml
+            git config user.name famasboy888
+            git config user.email famasboy88@gmail.com
+            git add .
+            git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
+            git push
 
