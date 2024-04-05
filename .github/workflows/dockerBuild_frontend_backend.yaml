@@ -12,6 +12,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-      - name: Checkout front-end and backend
       - uses: actions/checkout@v4
