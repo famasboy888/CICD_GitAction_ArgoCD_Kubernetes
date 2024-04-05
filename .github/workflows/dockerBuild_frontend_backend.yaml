@@ -44,16 +44,17 @@ jobs:
       #     push: true
       #     tags: ${{ secrets.DOCKERHUB_USERNAME  }}/react-app:0.0.${{ github.run_number }}.RELEASE
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
-          repository: famasboy888/CICD_ArgoCD_States
-          path: MERN_helm-chart
+          repository: 'famasboy888/CICD_ArgoCD_States'
+          path: 'MERN_helm-chart'
+          persist-credentials: true
+
+      - name: check files
+        shell: bash
+        working-directory: MERN_helm-chart   
           run: |
             ls *
-            echo 'versionNumber: ${{ github.run_number }}' > values.yaml
-            git config user.name famasboy888
-            git config user.email famasboy88@gmail.com
-            git add .
-            git commit -m 'Pushed from GitHub Actions front end. Build number: ${{ github.run_number }}'
-            git push
+            cat values.yaml
+
 
