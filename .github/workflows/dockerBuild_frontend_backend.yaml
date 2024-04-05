@@ -55,6 +55,6 @@ jobs:
         working-directory: MERN_helm-chart   
         run: |
           ls *
-          cat values.yaml
+          cat README.md
 
 
