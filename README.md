@@ -2,6 +2,8 @@
 
 This is a short description of the structure of GitHub Actions YAML file:
 
+Note: For this to work, we need to create a `.github/workflows/<name-of-yaml>.yaml` at the root directory of repo.
+
 ```yaml
 name: Github Actions for building and pushing docker
 
