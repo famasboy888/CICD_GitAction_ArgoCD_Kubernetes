@@ -1,6 +1,13 @@
-# This is a CI/CD Pipeline line using GitHub Actions and ArgoCD
+# End-to-End CI/CD Pipeline line using GitHub Actions and ArgoCD.
 
-This is a short description of the structure of GitHub Actions YAML file:
+We are deploying a **MERN Full Stack** (ReactJs + NodeJS + Express + Mongo DB) in **Kubernetes**.
+
+CI will be handled by **GitHub Actions**.
+
+While, CD will be handled by **ArgoCD**.
+
+
+## Structure of GitHub Actions YAML file:
 
 Note: For this to work, we need to create a `.github/workflows/<name-of-yaml>.yaml` at the root directory of repo.
 
