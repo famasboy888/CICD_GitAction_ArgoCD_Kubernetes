@@ -41,6 +41,7 @@ const WorkoutForm = () => {
     return (
         <form className="create" onSubmit={submitHandler}>
             {error && <div className="error">Error: {error}</div>}
+            <h3>This is a test from GitHub Actions</h3>
             <h3>Add new workout</h3>
             <label>Workout Title</label>
             <input
