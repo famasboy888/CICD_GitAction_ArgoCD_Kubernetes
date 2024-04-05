@@ -44,7 +44,7 @@ jobs:
       #     push: true
       #     tags: ${{ secrets.DOCKERHUB_USERNAME  }}/react-app:0.0.${{ github.run_number }}.RELEASE
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: 'famasboy888/CICD_ArgoCD_States'
           path: 'MERN_helm-chart'
