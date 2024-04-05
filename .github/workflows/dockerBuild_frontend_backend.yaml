@@ -46,7 +46,7 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: famasboy888/CICD_ArgoCD_States
+          repository: https://github.com/famasboy888/CICD_ArgoCD_States
           path: MERN_helm-chart
       
       - name: Push to ArgoCD repo
