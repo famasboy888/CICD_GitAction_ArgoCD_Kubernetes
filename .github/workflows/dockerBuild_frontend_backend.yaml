@@ -22,11 +22,10 @@ jobs:
           sed -i '/MONGO_PASS=/c\MONGO_PASS=${{ secrets.MONGO_PASS }}' .env
           sed -i '/MONGO_API=/c\MONGO_API=${{ secrets.MONGO_API }}' .env
     
-      # - name: Login Docker
-      # - uses: docker/login-action@v3
-      #   with:
-      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
     
     # - name: Build and push Docker image for Backend
     #   uses: docker/build-push-action@v5
