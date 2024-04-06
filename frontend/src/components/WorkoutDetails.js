@@ -5,7 +5,7 @@ const WorkoutDetails = ({ workout }) => {
     const { dispatch } = useWorkoutContext();
 
     const deleteHandler = async (id) => {
-        const response = await fetch('/api/workouts/' + id, {
+        const response = await fetch(process.env.REACT_APP_API+'/api/workouts/' + id, {
             method: 'DELETE'
         });
 
