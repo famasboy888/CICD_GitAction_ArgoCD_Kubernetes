@@ -1,6 +1,6 @@
 # End-to-End CI/CD Pipeline line using GitHub Actions and ArgoCD.
 
-## <i>Note: This is the CI part. The CD part is located in (ArgoCD States)[https://github.com/famasboy888/CICD_ArgoCD_States]</i>
+<i>Note: This is the CI part. The CD part is located in (ArgoCD States)[https://github.com/famasboy888/CICD_ArgoCD_States]</i>
 
 We are deploying a **MERN Full Stack** (ReactJs + NodeJS + Express + Mongo DB) in **Kubernetes**.
 
