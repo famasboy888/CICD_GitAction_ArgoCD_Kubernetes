@@ -8,7 +8,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-            const response = await fetch('http://frontend:80/api/workouts');
+            const response = await fetch('/api/workouts');
             const jsonParse = await response.json();
 
             if (response.ok) {
