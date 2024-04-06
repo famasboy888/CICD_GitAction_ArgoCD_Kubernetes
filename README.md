@@ -6,6 +6,33 @@ CI will be handled by **GitHub Actions**.
 
 While, CD will be handled by **ArgoCD**.
 
+# Flow
+
+## Modify changes from MERN App and push to Github
+
+<p align="left">
+  <img width="80%" height="80%" src="https://github.com/famasboy888/CICD_GitAction_ArgoCD_Kubernetes/assets/23441168/a8ae8bf2-1ea5-4bea-a1bb-203f6b37469f">
+</p>
+
+## Trigger Github Actions to build and push Docker image
+
+<p align="left">
+  <img width="80%" height="80%" src="https://github.com/famasboy888/CICD_GitAction_ArgoCD_Kubernetes/assets/23441168/5a47da51-ef9a-462f-afc4-54ed61e70b94">
+</p>
+
+## YAML changes will be pushed to ArgoCD repo in GitHub.
+
+<p align="left">
+  <img width="80%" height="80%" src="https://github.com/famasboy888/CICD_GitAction_ArgoCD_Kubernetes/assets/23441168/16d8a777-33d8-4dc6-a17d-99c1a1bbf6b2">
+</p>
+
+## ArgoCD will sync and re-redeploy new changes.
+
+<p align="left">
+  <img width="80%" height="80%" src="https://github.com/famasboy888/CICD_GitAction_ArgoCD_Kubernetes/assets/23441168/8012151c-51c4-47de-9f11-076cb822db77">
+</p>
+
+<hr>
 
 ## Structure of GitHub Actions YAML file:
 
