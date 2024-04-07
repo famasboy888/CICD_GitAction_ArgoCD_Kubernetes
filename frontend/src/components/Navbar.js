@@ -6,7 +6,7 @@ const Navbar = () => {
             <div className="container">
                 <Link to="/">
                     <h1>End-to-End CICD</h1>
-                    <h2>with Nginx</h2>
+                    <h2>with NGINX</h2>
                 </Link>
             </div>
         </header>
