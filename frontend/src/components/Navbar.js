@@ -5,7 +5,7 @@ const Navbar = () => {
         <header>
             <div className="container">
                 <Link to="/">
-                    <h1>End-to-End CICD</h1>
+                    <h1>End-to-End CICD + Talos Kubernetes (10 node-backend pods, 10 react-front end pods)</h1>
                     <h2>with NGINX</h2>
                 </Link>
             </div>
