@@ -87,3 +87,31 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME  }}/react-app:0.0.${{ github.run_number }}.RELEASE
 ```
+
+## Added working nginx.conf
+
+```bash
+upstream backend {
+        server node-server-service;
+}
+
+
+server {
+    listen 8080;
+    location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        proxy_pass http://backend;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+```
